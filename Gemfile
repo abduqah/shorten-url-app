@@ -25,3 +25,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'ffaker'
+  gem 'factory_bot_rails'
+end
