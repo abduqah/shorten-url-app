@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/abduqah/shorten-url.git
-  revision: 1460eea069c2b304d41f6dd7d23cf6287a72c266
+  revision: a6565c5723b3d5abf222316f35386b43f8cb5429
   ref: main
   specs:
-    shorten_url (0.2.3)
+    shorten_url (0.2.4)
       rails (~> 5.2)
 
 GEM
