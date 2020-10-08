@@ -3,8 +3,8 @@ services:
   db:
     image: postgres:11.9
     environment:
-      POSTGRES_USER: "${PGUSER:- dev_user}"
-      POSTGRES_PASSWORD: "${PGPASSWORD:- dev_user_password}"
+      POSTGRES_USER: "${PGUSER:-dev_user}"
+      POSTGRES_PASSWORD: "${PGPASSWORD:-dev_user_password}"
     volumes:
       - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
       - pg-data:/var/lib/postgresql/data
