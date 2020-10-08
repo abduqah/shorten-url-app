@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/abduqah/shorten-url.git
+  revision: 1460eea069c2b304d41f6dd7d23cf6287a72c266
+  ref: main
+  specs:
+    shorten_url (0.2.3)
+      rails (~> 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -167,6 +175,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.4)
   rspec-rails (~> 4.0.1)
+  shorten_url!
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
