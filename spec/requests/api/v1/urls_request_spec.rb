@@ -32,4 +32,19 @@ RSpec.describe "Api::V1::Urls", type: :request do
       expect(JSON.parse(response.body)['url']['original']).to eq(url.url)
     end
   end
+
+  context 'request retrieval of original url with a wrong short url' do
+    before do
+      post '/api/v1/urls/original', params: {
+        url: {
+          short: FFaker::Internet.http_url
+        }
+      }
+    end
+    
+    it 'returns no record' do
+      expect(JSON.parse(response.body)['errors'][0]).to eq("Sorry we couldn't resolve your short URL")
+      expect(response.status).to eq(422)
+    end
+  end
 end
