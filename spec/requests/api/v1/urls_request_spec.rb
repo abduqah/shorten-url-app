@@ -10,8 +10,8 @@ RSpec.describe "Api::V1::Urls", type: :request do
   end
   
   it 'returns the short url' do
-    expect(JSON.parse(response.body)['url']['short_url']).to eq('http://0.try')
-    expect(JSON.parse(response.body)['url']['original_url']).to eq('https://test-very-long-url.com')
+    expect(JSON.parse(response.body)['url']['short']).to eq('http://0.try')
+    expect(JSON.parse(response.body)['url']['original']).to eq('https://test-very-long-url.com')
   end
 end
 
@@ -19,13 +19,13 @@ RSpec.describe "Api::V1::Urls", type: :request do
   before do
     post '/api/v1/urls/original', params: {
       url: {
-        short_url: 'http://0.try'
+        short: 'http://0.try'
       }
     }
   end
   
   it 'returns the original url' do
-    expect(JSON.parse(response.body)['url']['short_url']).to eq('http://0.try')
-    expect(JSON.parse(response.body)['url']['original_url']).to eq('https://test-very-long-url.com')
+    expect(JSON.parse(response.body)['url']['short']).to eq('http://0.try')
+    expect(JSON.parse(response.body)['url']['original']).to eq('https://test-very-long-url.com')
   end
 end
