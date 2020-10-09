@@ -47,4 +47,34 @@ RSpec.describe "Api::V1::Urls", type: :request do
       expect(response.status).to eq(422)
     end
   end
+
+  context 'request original url retrieval with valid short url, but not in system' do
+    before do
+      post '/api/v1/urls/original', params: {
+        url: {
+          short: 'http://nts.try'
+        }
+      }
+    end
+    
+    it 'returns no record' do
+      expect(JSON.parse(response.body)['errors'][0]).to eq("Sorry we couldn't resolve your short URL")
+      expect(response.status).to eq(422)
+    end
+  end
+
+  context 'request retrieval of original url from short url with chars not in base' do
+    before do
+      post '/api/v1/urls/original', params: {
+        url: {
+          short: 'http://nt-s.try'
+        }
+      }
+    end
+    
+    it 'returns no record' do
+      expect(JSON.parse(response.body)['errors'][0]).to eq("Sorry we couldn't resolve your short URL")
+      expect(response.status).to eq(422)
+    end
+  end
 end
