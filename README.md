@@ -33,3 +33,7 @@ Simple API app testing shorten_url gem
 
   ```http://localhost:3000/docs```
 
+5. You can use interface directly from browser
+
+  ```http://localhost:3000/```
+
