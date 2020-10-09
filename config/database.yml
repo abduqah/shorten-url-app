@@ -21,8 +21,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   host: <%= ENV.fetch("PGHOST") { "localhost" } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch("PGUSER") { "dev_user" } %>
-  password: <%= ENV.fetch("PGPASSWORD") { "dev_user_password" } %>
+  username: <%= ENV.fetch("PGUSER") { "db_user" } %>
+  password: <%= ENV.fetch("PGPASSWORD") { "db_password" } %>
 
 development:
   <<: *default
@@ -84,5 +84,3 @@ test:
 production:
   <<: *default
   database: shorten-url-app_production
-  username: shorten-url-app
-  password: <%= ENV['SHORTEN-URL-APP_DATABASE_PASSWORD'] %>

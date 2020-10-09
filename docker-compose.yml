@@ -1,0 +1,46 @@
+version: "3"
+services:
+  db:
+    image: postgres:11.9
+    environment:
+      POSTGRES_USER: "${PGUSER:-db_user}"
+      POSTGRES_PASSWORD: "${PGPASSWORD:-db_password}"
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - "${PG_PORT:-5432}:5432"
+
+  app: &app
+    image: ruby:2.7
+    command: bash
+    working_dir: /app
+    volumes:
+      - .:/app
+      - bundler-data:/usr/local/bundle/:cached
+      - bin-data:/usr/local/bin/:cached
+    environment:
+      - RAILS_ENV=${RAILS_ENV:-production}
+      - PGHOST=db
+      - PGUSER=${PGUSER:-db_user}
+      - PGPASSWORD=${PGPASSWORD:-db_password}
+    depends_on:
+      - db
+
+  api:
+    <<: *app
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      - RAILS_ENV=${RAILS_ENV:-production}
+      - PGHOST=db
+      - PGUSER=${PGUSER:-db_user}
+      - PGPASSWORD=${PGPASSWORD:-db_password}
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+volumes:
+  bundler-data: {}
+  bin-data: {}
+  pg-data: {}
