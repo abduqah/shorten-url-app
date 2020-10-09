@@ -1,24 +1,35 @@
-# README
+# Shorten Urls APIs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents:
 
-Things you may want to cover:
+* [Description](./README.md#description)
+  * [Task](./README.md#task)
+* [Setup](./README.md#setup)
+* [Running the app](./README.md#running-the-app)
 
-* Ruby version
+## Description
 
-* System dependencies
+Simple API app testing shorten_url gem
 
-* Configuration
+## Task
 
-* Database creation
+  Implement a URL shortner gem and a demo application to demonstrate how your library works. The library should include taking a URL in full path and returns the result with the shorten URL.
 
-* Database initialization
+## Setup
 
-* How to run the test suite
+1. Make sure you have Docker 18 or higher installed and running.
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Prepare app bundle and DB by running:
 
-* Deployment instructions
+	```make prepare```
 
-* ...
+## Running the app
+
+3. Run app
+
+  ```make up```
+
+4. Check API documentation from browser
+
+  ```http://localhost:3000/docs```
+
