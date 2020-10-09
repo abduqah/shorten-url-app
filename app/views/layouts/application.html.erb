@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <html class="has-navbar-fixed-top">
+  <head>
+    <title>Shortener</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "layouts/header.html.erb" %>
+    
+    <%= yield %>
+  </body>
+</html>

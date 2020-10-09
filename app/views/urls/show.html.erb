@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="container">
+
+    <div class="box">
+      <div class="table-container">
+        <table class="table is-striped is-fullwidth">
+          <tbody>
+            <tr>
+              <th>Original URL</th>
+              <td><%= @url.url %></td>
+            </tr>
+            <tr>
+              <th>Shortened URL</th>
+              <td><%= @url.short_url %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <%= link_to "Shorten another URL", new_url_path, class: "button button-large is-success is-outlined is-light" %>
+  </div>
+</section>

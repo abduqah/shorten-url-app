@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Shorten URL</h1>
+    <%= form_with(url: urls_path, local: true) do |f| %>
+
+      <%= f.fields_for :url do |ff| %>
+        <div class="field">
+          <%= ff.label :URL, class: "label required-field" %>
+          <%= ff.text_field :original, autofocus: true, class: "input is-info", type: "text", placeholder: "Enter your original URL" %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Shorten this URL!", class: "button button-large is-success is-outlined is-light" %>
+      </div>
+    <% end %>
+  </div>
+</section>

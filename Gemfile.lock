@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/abduqah/shorten-url.git
-  revision: 6e4a2d33a6e8a3615b72a7963bdcf8ec5ce9b179
+  revision: 61dbd8e74abeba9275202d419debf8c7a73ae5d9
   ref: main
   specs:
     shorten_url (0.3.0)
@@ -51,15 +51,26 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    bindex (0.8.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bulma-rails (0.9.0)
+      sassc (~> 2.0)
     byebug (11.1.3)
+    coffee-rails (4.2.2)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     database_cleaner (1.8.5)
     diff-lcs (1.4.4)
     erubi (1.9.0)
+    execjs (2.7.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
@@ -74,6 +85,8 @@ GEM
       tilt
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.10.1)
+      activesupport (>= 5.0.0)
     json (2.3.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -164,6 +177,19 @@ GEM
       rspec (~> 3.0)
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    sass-rails (5.1.0)
+      railties (>= 5.2.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -173,7 +199,7 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (4.0.2)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.2)
@@ -184,8 +210,18 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
+    web-console (3.7.0)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
+      bindex (>= 0.4.0)
+      railties (>= 5.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -195,10 +231,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bulma-rails
   byebug
+  coffee-rails (~> 4.2)
   database_cleaner
   factory_bot_rails
   ffaker
+  jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
@@ -206,9 +245,13 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.2.4.4)
   rspec-rails (~> 4.0.1)
   rspec_api_documentation
+  sass-rails (~> 5.0)
   shorten_url!
   spring
   spring-watcher-listen (~> 2.0.0)
+  turbolinks (~> 5)
+  uglifier (>= 1.3.0)
+  web-console (>= 3.3.0)
 
 RUBY VERSION
    ruby 2.7.2p137
