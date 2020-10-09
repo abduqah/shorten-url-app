@@ -10,7 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
-gem 'rspec_api_documentation'
+# Documentation
 gem 'raddocs'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -22,6 +22,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'rspec_api_documentation'
 end
 
 group :development do
