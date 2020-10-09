@@ -1,0 +1,48 @@
+{
+  "resource": "Urls",
+  "resource_explanation": "Urls resource",
+  "http_method": "POST",
+  "route": "/api/v1/urls/original",
+  "description": "Requesting url shortening",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "url",
+      "with_example": true,
+      "required": true,
+      "name": "short",
+      "description": "Short url"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/urls/original",
+      "request_body": "url[short]=http%3A%2F%2Fa.try",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e0f8b7dd8ba3fea93d3e4197f395f190\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "5cc71ab1-d6e6-45cb-9d62-a2fcbe8b4808",
+        "X-Runtime": "0.005044",
+        "Content-Length": "63"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "resources": [
+    {
+      "name": "Urls",
+      "explanation": "Urls resource",
+      "examples": [
+        {
+          "description": "Requesting url shortening",
+          "link": "urls/requesting_url_shortening.json",
+          "groups": "all",
+          "route": "/api/v1/urls",
+          "method": "post"
+        },
+        {
+          "description": "Requesting url shortening",
+          "link": "urls/requesting_url_shortening.json",
+          "groups": "all",
+          "route": "/api/v1/urls/original",
+          "method": "post"
+        },
+        {
+          "description": "Requesting url shortening with not valid short url",
+          "link": "urls/requesting_url_shortening_with_not_valid_short_url.json",
+          "groups": "all",
+          "route": "/api/v1/urls/original",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}
